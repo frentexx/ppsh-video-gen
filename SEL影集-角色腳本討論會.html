@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>高中生搞大事 討論會</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* 版面概念：教室黑板。16:9 投影頁，粉筆色字，一頁一個重點；手機寬度改為上下捲動 */
+:root{
+  color-scheme: dark;
+  --board:#1f3a32;      /* 黑板綠 */
+  --board-deep:#172c26;
+  --chalk:#f1efe6;      /* 粉筆白 */
+  --chalk-dim:#b9c4bc;
+  --yellow:#f2d45c;     /* 粉筆黃：重點 */
+  --pink:#f2a1b4;       /* 粉筆粉：需要老師補 */
+  --blue:#93cbe6;       /* 粉筆藍：投票 */
+  --line:rgba(241,239,230,.22);
+  --display:"Huninn","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  --body:"Noto Sans TC","Microsoft JhengHei","PingFang TC",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--board-deep);color:var(--chalk);font-family:var(--body);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding-inline:16px}
+.deck{width:min(100%,calc((100vh - 72px) * 16 / 9));aspect-ratio:16/9;max-width:100%;position:relative;container-type:inline-size}
+.slide{position:absolute;inset:0;background:var(--board);border:1.2cqw solid #6b4a2f;border-radius:.6cqw;
+  padding:4cqw 5cqw;display:none;flex-direction:column;gap:2cqw;overflow:hidden;
+  background-image:radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.05),transparent 60%),radial-gradient(ellipse at 80% 90%,rgba(255,255,255,.04),transparent 50%)}
+.slide.on{display:flex}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:2cqw}
+.tag{font-size:1.6cqw;color:var(--chalk-dim);letter-spacing:.15em}
+.time{font-size:1.6cqw;color:var(--yellow);border:1px solid var(--yellow);border-radius:99px;padding:.2cqw 1.2cqw;white-space:nowrap}
+h1,h2{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;line-height:1.25}
+h1{font-size:6cqw}
+h2{font-size:3.8cqw}
+p{margin:0}
+.big{font-size:2.6cqw;line-height:1.6}
+.mid{font-size:2cqw;line-height:1.6}
+.small{font-size:1.6cqw;line-height:1.55;color:var(--chalk-dim)}
+.y{color:var(--yellow)} .p{color:var(--pink)} .b{color:var(--blue)}
+ul{margin:0;padding-left:1.2em}
+li{margin:.3em 0}
+.underline{text-decoration:underline wavy var(--yellow);text-underline-offset:.35em;text-decoration-thickness:.12em}
+
+/* 封面 */
+.cover{justify-content:center;gap:3cqw}
+.cover .goals{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw}
+.goal{border-top:.25cqw solid var(--yellow);padding-top:1.2cqw}
+.goal b{display:block;font-family:var(--display);font-weight:400;font-size:2.6cqw;color:var(--yellow);margin-bottom:.5cqw}
+.goal span{font-size:1.9cqw;line-height:1.5}
+
+/* 影集介紹 */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw}
+.fact{text-align:left}
+.fact .n{font-family:var(--display);font-size:6cqw;color:var(--yellow);line-height:1}
+.fact .u{font-size:2cqw}
+.rule{margin-top:auto;border:.2cqw dashed var(--line);border-radius:.6cqw;padding:1.6cqw 2cqw;font-size:2.1cqw;line-height:1.6}
+
+/* 角色卡 */
+.char{display:grid;grid-template-columns:1fr 1fr;gap:3cqw;flex:1;min-height:0}
+.char .name{display:flex;align-items:baseline;gap:1.5cqw;flex-wrap:wrap}
+.char .name h1{font-size:6.5cqw}
+.char .who{font-size:2.1cqw;color:var(--yellow)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:1cqw 1.6cqw;font-size:2cqw;line-height:1.5;margin-top:1.5cqw}
+.kv dt{color:var(--chalk-dim)}
+.kv dd{margin:0}
+.ask{border-left:.4cqw solid var(--pink);padding:1.2cqw 0 1.2cqw 2cqw;display:flex;flex-direction:column;gap:1cqw}
+.ask .h{font-size:1.7cqw;color:var(--pink);letter-spacing:.12em}
+.ask ol{margin:0;padding-left:1.3em;font-size:2.15cqw;line-height:1.55}
+.ask ol li{margin:.2em 0 .6em}
+.note{font-size:1.6cqw;color:var(--chalk-dim);line-height:1.5;margin-top:auto}
+
+/* 六集 */
+.eps{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;flex:1;min-height:0}
+.ep{border:.15cqw solid var(--line);border-radius:.8cqw;padding:1.6cqw;display:flex;flex-direction:column;gap:1cqw;min-width:0}
+.ep.flag{border-color:var(--pink);border-width:.25cqw}
+.ep .no{font-family:var(--display);font-size:3cqw;color:var(--yellow);line-height:1}
+.ep .theme{font-size:1.75cqw;color:var(--chalk);font-weight:700;line-height:1.4}
+.ep .story{font-size:1.6cqw;line-height:1.55;color:var(--chalk-dim)}
+.ep .q{font-size:1.75cqw;line-height:1.5;border-top:.15cqw dashed var(--line);padding-top:1cqw;margin-top:auto}
+.ep .q b{color:var(--pink);font-weight:500}
+.ep .vote{font-size:1.45cqw;color:var(--blue);line-height:1.45}
+
+/* 地雷清單 */
+.mines{display:grid;grid-template-columns:1fr 1fr;gap:.4cqw 2.4cqw;flex:1;align-content:start}
+.mine{display:flex;gap:1.2cqw;align-items:flex-start;text-align:left;background:none;border:0;color:inherit;font:inherit;
+  padding:.5cqw 1cqw;border-radius:.6cqw;cursor:pointer}
+.mine:hover{background:rgba(255,255,255,.05)}
+.mine:focus-visible{outline:.2cqw solid var(--yellow)}
+.box{flex:none;width:2.6cqw;height:2.6cqw;border:.2cqw solid var(--chalk-dim);border-radius:.4cqw;display:grid;place-items:center;
+  font-size:1.8cqw;line-height:1;margin-top:.2cqw}
+.mine[data-s="ok"] .box{border-color:var(--yellow);color:var(--yellow)}
+.mine[data-s="fix"] .box{border-color:var(--pink);color:var(--pink)}
+.mine b{display:block;font-size:1.9cqw;font-weight:700}
+.mine span{display:block;font-size:1.45cqw;color:var(--chalk-dim);line-height:1.45}
+.legend{font-size:1.5cqw;color:var(--chalk-dim)}
+
+/* 結尾 */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;flex:1}
+.steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:1.4cqw;font-size:2.1cqw;line-height:1.5}
+.steps li{display:flex;gap:1.4cqw}
+.steps .d{font-family:var(--display);color:var(--yellow);flex:none;width:2.8cqw}
+
+/* 翻頁列 */
+.bar{width:min(100%,calc((100vh - 72px) * 16 / 9));display:flex;justify-content:space-between;align-items:center;padding-block:12px;gap:12px;font-size:14px;color:var(--chalk-dim)}
+.bar button{background:none;color:var(--chalk);border:1px solid var(--line);border-radius:6px;padding:6px 14px;font:inherit;cursor:pointer}
+.bar button:hover{border-color:var(--yellow);color:var(--yellow)}
+.bar button:focus-visible{outline:2px solid var(--yellow)}
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.dots button{width:10px;height:10px;padding:0;border-radius:50%;border:1px solid var(--chalk-dim)}
+.dots button.on{background:var(--yellow);border-color:var(--yellow)}
+
+/* 手機：改成上下捲動，每頁一張 */
+@media (max-width:760px){
+  body{display:block;padding-block:16px}
+  .deck{aspect-ratio:auto;width:100%;container-type:normal}
+  .slide{position:relative;display:flex;margin-bottom:16px;padding:20px;gap:14px;border-width:6px;font-size:16px}
+  .slide *{font-size:inherit}
+  h1,.char .name h1{font-size:28px} h2{font-size:22px}
+  .big,.mid,.kv,.ask ol,.goal span,.rule,.steps{font-size:16px}
+  .tag,.time,.small,.note,.legend,.ep .story,.ep .vote,.mine span{font-size:13px}
+  .fact .n{font-size:36px} .ep .no{font-size:22px}
+  .cover .goals,.facts,.char,.eps,.mines,.two{grid-template-columns:1fr;gap:14px}
+  .box{width:22px;height:22px;font-size:15px}
+  .bar{display:none}
+}
+@media (prefers-reduced-motion:no-preference){.slide.on{animation:in .25s ease-out}}
+@keyframes in{from{opacity:.4}to{opacity:1}}
+</style>
+
+<main class="deck" id="deck">
+
+<!-- 1 封面 -->
+<section class="slide cover on" aria-label="封面">
+  <div class="top"><span class="tag">屏北高中｜社會情緒學習影集　角色與腳本討論會</span></div>
+  <h1>《高中生搞大事！》<br><span class="y">像不像我們的學生？</span></h1>
+  <div class="goals">
+    <div class="goal"><b>① 角色</b><span>四個主角，像不像我們每天看到的學生和老師？</span></div>
+    <div class="goal"><b>② 故事</b><span>六集的情節，學生看了會不會說「這就是我們學校」？</span></div>
+    <div class="goal"><b>③ 地雷</b><span>哪些地方可能讓學生或家長不舒服？</span></div>
+  </div>
+  <p class="small">今天不用想怎麼拍，只要想：「我們的學生會不會這樣？」</p>
+</section>
+
+<!-- 2 影集是什麼 -->
+<section class="slide" aria-label="影集介紹">
+  <div class="top"><span class="tag">這部影集是什麼</span></div>
+  <h2>用學生自己的生活，練習<span class="underline">情緒與人際</span>的能力</h2>
+  <div class="facts">
+    <div class="fact"><div class="n">6</div><div class="u">集，一集練一種能力<br><span class="small">搭配一個生活議題</span></div></div>
+    <div class="fact"><div class="n">3</div><div class="u">分鐘一集<br><span class="small">手機直式短影音</span></div></div>
+    <div class="fact"><div class="n">1</div><div class="u">個月播一集<br><span class="small">片尾讓學生投票</span></div></div>
+  </div>
+  <p class="mid">每集片尾，學生用手機寫一個詞，<span class="b">最多人寫的那個詞會出現在下一集</span>，例如老師騎什麼出場、主角講哪句台詞。</p>
+  <div class="rule">畫面用 AI 製作，不需要找學生演出。<br>所以<span class="y">老師們今天說的真實樣子，就是劇本的來源。</span></div>
+</section>
+
+<!-- 3 黑狗 -->
+<section class="slide" aria-label="角色：黑狗">
+  <div class="top"><span class="tag">角色 1／4　主角</span></div>
+  <div class="char">
+    <div>
+      <div class="name"><h1>黑狗</h1><span class="who">衝動、講義氣的庄腳囝仔</span></div>
+      <dl class="kv">
+        <dt>個性</dt><dd>脾氣來得快去得快，被拱就上，對朋友很挺</dd>
+        <dt>家裡</dt><dd>務農（種什麼待定）</dd>
+        <dt>說話</dt><dd>國台語夾雜，口頭禪「免驚啦！」</dd>
+        <dt>成長</dt><dd>從「先衝再說」學會「先停三秒」</dd>
+      </dl>
+    </div>
+    <div class="ask">
+      <span class="h">請老師補</span>
+      <ol>
+        <li>我們學生家裡最常做什麼工作、種什麼？</li>
+        <li>像黑狗這樣的學生，最常在哪裡、為了什麼惹麻煩？</li>
+        <li>他們現在最常講的口頭禪是什麼？</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 4 阿蓮 -->
+<section class="slide" aria-label="角色：阿蓮">
+  <div class="top"><span class="tag">角色 2／4　女主角</span></div>
+  <div class="char">
+    <div>
+      <div class="name"><h1>阿蓮</h1><span class="who">冷靜、手很巧的原住民女生</span></div>
+      <dl class="kv">
+        <dt>個性</dt><dd>話不多、遇事很冷靜，討厭別人說「女生就該怎樣」</dd>
+        <dt>家裡</dt><dd>開機車行，從小就會修車</dd>
+        <dt>身分</dt><dd>原住民，族名與漢名都有；這是她的日常，<span class="y">不是她的笑點</span></dd>
+        <dt>成長</dt><dd>學會不只自己做好，也開口說出感受</dd>
+      </dl>
+    </div>
+    <div class="ask">
+      <span class="h">請老師補</span>
+      <ol>
+        <li>她是哪一族？族名怎麼取比較自然？（請原住民老師建議）</li>
+        <li>她每天怎麼上學？住校、通車，還是家人載？</li>
+        <li>我們的原住民學生最不喜歡被怎麼看待？</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 5 輝仔 -->
+<section class="slide" aria-label="角色：輝仔">
+  <div class="top"><span class="tag">角色 3／4　好朋友</span></div>
+  <div class="char">
+    <div>
+      <div class="name"><h1>輝仔</h1><span class="who">想很多、愛講冷笑話的新住民第二代</span></div>
+      <dl class="kv">
+        <dt>個性</dt><dd>話少心細、觀察力強，內心戲很多，偶爾冷笑話冷到全場</dd>
+        <dt>家裡</dt><dd>媽媽來自越南，會說中文和越南語</dd>
+        <dt>身分</dt><dd>有自信，不是可憐的角色；煩惱是<span class="y">想太多、怕出糗</span></dd>
+        <dt>成長</dt><dd>學會不等別人開口，自己先說出想法</dd>
+      </dl>
+    </div>
+    <div class="ask">
+      <span class="h">請老師補</span>
+      <ol>
+        <li>新住民第二代學生，最常被同學問什麼，讓他們覺得煩？</li>
+        <li>他什麼時候會說越南語？在家、跟媽媽，還是從不在學校說？</li>
+        <li>他在班上通常是什麼位置？</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 6 老蔡 -->
+<section class="slide" aria-label="角色：老蔡">
+  <div class="top"><span class="tag">角色 4／4　導師</span></div>
+  <div class="char">
+    <div>
+      <div class="name"><h1>老蔡</h1><span class="who">穿藍白拖的導師兼體育老師</span></div>
+      <dl class="kv">
+        <dt>個性</dt><dd>直白溫暖，不講大道理，一句話就點到痛處</dd>
+        <dt>招牌</dt><dd>藍白拖、隨身小音響、國台語夾雜</dd>
+        <dt>作用</dt><dd>每集在學生卡住時出現，幫他們看見自己的情緒</dd>
+        <dt>金句</dt><dd>「承認別人厲害，不會讓你少一塊肉啦！」</dd>
+      </dl>
+    </div>
+    <div class="ask">
+      <span class="h">請老師補</span>
+      <ol>
+        <li>學生心中「受歡迎的老師」是什麼樣子？</li>
+        <li>老師講哪種話，學生會當場翻白眼？</li>
+        <li>老蔡管秩序的時候，學生最常怎麼回嘴？</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 7 第1-3集 -->
+<section class="slide" aria-label="第一到三集">
+  <div class="top"><span class="tag">六集故事（上）　每集只討論一個問題</span></div>
+  <div class="eps">
+    <article class="ep">
+      <div class="no">第 1 集</div>
+      <div class="theme">認識自己的情緒 × 性別平等</div>
+      <p class="story">黑狗的機車在校門口拋錨，阿蓮三分鐘修好。黑狗嘴硬生悶氣，老蔡點破：你不是生氣，是覺得丟臉。</p>
+      <p class="q"><b>想一想：</b>我們學生最常聽到的「男生就該、女生就該」是哪一句？</p>
+      <p class="vote">片尾投票：老蔡下一集騎什麼出場？</p>
+    </article>
+    <article class="ep">
+      <div class="no">第 2 集</div>
+      <div class="theme">控制衝動 × 交通安全</div>
+      <p class="story">隔壁班拱黑狗「沒駕照敢不敢騎」，黑狗差點上鉤，最後學會先停三秒再拒絕。</p>
+      <p class="q"><b>想一想：</b>學生騎車最常見的是哪一種狀況？被拱的時候，他們通常怎麼回？</p>
+      <p class="vote">片尾投票：最嗆但不傷人的拒絕台詞</p>
+    </article>
+    <article class="ep">
+      <div class="no">第 3 集</div>
+      <div class="theme">團隊與體諒 × 運動健康</div>
+      <p class="story">體育課籃球賽，第一次打球的輝仔一直漏接，黑狗差點爆氣，最後改成把球傳給他。</p>
+      <p class="q"><b>想一想：</b>學生下課和體育課，真的都在做什麼？</p>
+      <p class="vote">片尾投票：老蔡放哪一種曲風叫大家起來動？</p>
+    </article>
+  </div>
+</section>
+
+<!-- 8 第4-6集 -->
+<section class="slide" aria-label="第四到六集">
+  <div class="top"><span class="tag">六集故事（下）　粉紅框＝需要特別討論</span></div>
+  <div class="eps">
+    <article class="ep flag">
+      <div class="no">第 4 集</div>
+      <div class="theme">做對的選擇 × 多元文化</div>
+      <p class="story">同學隨口一句玩笑話，刺到了阿蓮或輝仔。黑狗本來跟著笑，後來選擇出聲。</p>
+      <p class="q"><b>想一想：</b>要不要直接演出這種「隨口的一句話」？要的話，用哪一句學生真的聽過的？</p>
+      <p class="vote">需要原住民老師、熟悉新住民家庭的老師給意見</p>
+    </article>
+    <article class="ep">
+      <div class="no">第 5 集</div>
+      <div class="theme">跟家人好好說 × 氣候變遷</div>
+      <p class="story">豪雨打壞黑狗家的作物，父子大吵。三人一起去田裡幫忙，黑狗換個口氣跟爸爸說話。</p>
+      <p class="q"><b>想一想：</b>學生家裡最怕哪一種天災？跟爸媽吵架，通常吵什麼？</p>
+      <p class="vote">片尾投票：幫黑狗的貼文下一個標題</p>
+    </article>
+    <article class="ep">
+      <div class="no">第 6 集</div>
+      <div class="theme">看見自己的成長 × 前五集回顧</div>
+      <p class="story">成果展電腦當機，三人各用自己的本事救場。黑狗對鏡頭說：「我們的背景，就是這裡。」</p>
+      <p class="q"><b>想一想：</b>成果展辦在哪裡，學生最有感？校慶、廟口，還是社區活動？</p>
+      <p class="vote">劇終活動：全校角色梗圖創作比賽</p>
+    </article>
+  </div>
+</section>
+
+<!-- 9 地雷清單 -->
+<section class="slide" aria-label="地雷檢查清單">
+  <div class="top"><span class="tag">地雷檢查清單　點一下切換：空白 → ✓ 沒問題 → ✕ 要改</span></div>
+  <h2 style="font-size:3cqw">這些地方，會不會讓學生或家長不舒服？</h2>
+  <div class="mines" id="mines">
+    <button class="mine" type="button" id="m1" data-s=""><i class="box"></i><div><b>原住民</b><span>不用唱歌跳舞、運動好、喝酒、加分當笑點；族名、服飾要有根據</span></div></button>
+    <button class="mine" type="button" id="m2" data-s=""><i class="box"></i><div><b>新住民</b><span>不模仿口音、不用「外配」這類稱呼、不只用食物代表一個文化</span></div></button>
+    <button class="mine" type="button" id="m3" data-s=""><i class="box"></i><div><b>家庭與經濟</b><span>不拿家裡做什麼工作、有沒有錢開玩笑</span></div></button>
+    <button class="mine" type="button" id="m4" data-s=""><i class="box"></i><div><b>動手與受傷</b><span>打頭、威脅、受傷住院，都不當笑點</span></div></button>
+    <button class="mine" type="button" id="m5" data-s=""><i class="box"></i><div><b>性別稱呼</b><span>「男人婆」「娘」這類話，就算是壞角色講的，也要想清楚怎麼收尾</span></div></button>
+    <button class="mine" type="button" id="m6" data-s=""><i class="box"></i><div><b>真實歌曲、品牌、名人</b><span>投票選項和畫面都不放真名，避免版權和代言問題</span></div></button>
+    <button class="mine" type="button" id="m7" data-s=""><i class="box"></i><div><b>家長看了會怎麼想</b><span>無照騎車、跟爸爸吵架的畫面，會不會被看成是在鼓勵？</span></div></button>
+    <button class="mine" type="button" id="m8" data-s=""><i class="box"></i><div><b>學生投票</b><span>有人亂寫不雅的詞怎麼辦？由誰先看過再公布？</span></div></button>
+  </div>
+</section>
+
+<!-- 10 待決與下一步 -->
+<section class="slide" aria-label="待決與下一步">
+  <div class="top"><span class="tag">還沒決定的事　＋　下一步</span></div>
+  <div class="two">
+    <div style="display:flex;flex-direction:column;gap:1.6cqw">
+      <h2 class="p">還沒決定的事</h2>
+      <ul class="mid">
+        <li>一個月播一集、共六個月，<span class="y">從哪個月開播？</span>會不會遇到寒假？</li>
+        <li>學生的投票結果<span class="y">由誰整理</span>？</li>
+        <li>第一集要不要先請<span class="y">幾位學生試看</span>？</li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1.6cqw">
+      <h2 class="y">下一步</h2>
+      <ol class="steps">
+        <li><span class="d">1</span><span>會後一週內，把想到的學生真實例子傳給秘書</span></li>
+        <li><span class="d">2</span><span>依今天的意見，修改角色與六集故事</span></li>
+        <li><span class="d">3</span><span>先做出第一集，給大家看過再往下做</span></li>
+      </ol>
+    </div>
+  </div>
+  <p class="note">提醒：分享學生例子時，請不要寫出真實姓名或可辨認的細節。</p>
+</section>
+
+</main>
+
+<nav class="bar" aria-label="翻頁">
+  <button type="button" id="prev">← 上一頁</button>
+  <div class="dots" id="dots"></div>
+  <span id="count" style="font-variant-numeric:tabular-nums">1 / 10</span>
+  <button type="button" id="full">全螢幕</button>
+  <button type="button" id="next">下一頁 →</button>
+</nav>
+
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  const dots=document.getElementById('dots');
+  let i=0;
+  // 建立頁碼小圓點
+  slides.forEach((s,k)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','第 '+(k+1)+' 頁');b.onclick=()=>go(k);dots.appendChild(b);});
+  function go(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));
+    document.getElementById('count').textContent=(i+1)+' / '+slides.length;
+  }
+  document.getElementById('prev').onclick=()=>go(i-1);
+  document.getElementById('next').onclick=()=>go(i+1);
+  // 鍵盤翻頁：左右鍵、空白鍵、PageUp/PageDown（簡報筆也能用）
+  document.addEventListener('keydown',e=>{
+    if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(i+1);}
+    if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(i-1);}
+    if(e.key==='Home')go(0); if(e.key==='End')go(slides.length-1);
+  });
+  // 全螢幕（部分環境不支援就略過）
+  document.getElementById('full').onclick=()=>{
+    try{ if(!document.fullscreenElement){document.documentElement.requestFullscreen().catch(()=>{});} else {document.exitFullscreen();} }catch(e){}
+  };
+  // 地雷清單：點一下切換狀態，存在這台電腦的瀏覽器（只為了重新整理不消失）
+  const marks={'':'', ok:'✓', fix:'✕'}, order=['','ok','fix'];
+  let saved={}; try{saved=JSON.parse(localStorage.getItem('sel-mines')||'{}')}catch(e){}
+  document.querySelectorAll('.mine').forEach(m=>{
+    const set=s=>{m.dataset.s=s;m.querySelector('.box').textContent=marks[s];};
+    set(saved[m.id]||'');
+    m.addEventListener('click',e=>{
+      e.stopPropagation();
+      set(order[(order.indexOf(m.dataset.s)+1)%3]);
+      saved[m.id]=m.dataset.s; try{localStorage.setItem('sel-mines',JSON.stringify(saved))}catch(e){}
+    });
+  });
+  go(0);
+})();
+</script>
+
+</html>
