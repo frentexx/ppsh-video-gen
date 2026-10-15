@@ -1,0 +1,1370 @@
+{
+ "_comment": "〈一針見血〉全本地短片設定。與另一支比較用，cine/h3/frame_suffix/chars/music/mix/ending 兩片寫法相同。用法見 repo-16gvram-32gram/pipeline/template_local/README.md。",
+ "title": "一針見血",
+ "repo_dir": "../../repo-16gvram-32gram",
+ "cine": "A cinematic film still from a Taiwanese coming-of-age high-school drama, shot on Kodak Vision3 500T film with an anamorphic 50mm lens at f/2, warm amber and soft teal color grade, shallow depth of field, natural faces and expressions, subtle film grain. Full-frame image, NO black letterbox bars. ",
+ "set_sentence": "Use the location from <image{n}> as the set (same architecture, windows, furniture and light direction), but only as the location.",
+ "frame_suffix": " Only the people described appear in the frame, exactly as many as stated. No text, no watermark, no captions, no readable writing or logos on any surface or clothing.",
+ "h3": {
+  "style": "a realistic cinematic live-action Taiwanese high-school drama shot on anamorphic lenses, 35mm grain, natural light",
+  "setting": "a Taiwanese public high school campus",
+  "soundscape": "Quiet school ambience, faint distant voices far away, soft birds and the gentle rustle of cloth.",
+  "camera": "The camera holds a static shot on a tripod.",
+  "constraints": [
+   "No new people appear that are not already in the first frame; no captions and no readable text anywhere; no logos.",
+   "The camera stays locked on the tripod; no zoom, no pan.",
+   "LOCKED-OFF STATIC CAMERA on a tripod.",
+   "Background people stay in place and barely move; only the people described in the action move; no objects are added or removed."
+  ]
+ },
+ "chars": {
+  "gou": {
+   "name": "大頭",
+   "look": "Datou, a 17-year-old Taiwanese high-school boy, about 172 cm, sturdy and a little stocky with thick forearms, sun-tanned dark skin, a square jaw, thick straight eyebrows, a few faint acne marks, short black hair buzzed at the sides with a messy spiky fringe, an energetic and slightly cocky face, an ordinary-looking real Taiwanese teenager (not a model, natural unretouched skin), wearing the school summer uniform: a light powder-blue short-sleeve collared button-up shirt worn untucked, with a small red embroidered mark above the left chest pocket (no readable text), charcoal-grey straight-leg school trousers and black leather school shoes",
+   "voice_design": "A 17-year-old Taiwanese high-school boy with a slightly rough, loud, impulsive voice, quick-tempered but a little cheeky, natural Taiwanese Mandarin accent with a casual Taiwanese flavor.",
+   "voice_sample": "你不用管我啦，我自己會處理，這點小事一下就好了，真的沒什麼大不了。",
+   "h3_voice": "a slightly rough, loud 17-year-old boy's voice",
+   "edge_voice": "zh-TW-YunJheNeural",
+   "sub_color": "&H003C9AFF"
+  },
+  "lian": {
+   "name": "阿蓮",
+   "look": "Alian, a 17-year-old Taiwanese high-school girl, about 160 cm, slim and athletic, a light-to-medium warm skin tone, an oval face with calm sharp eyes, straight black shoulder-length hair tied back in a low ponytail with a plain black hair tie, short clean fingernails, no makeup, no accessories and no jewelry, an ordinary-looking real Taiwanese teenager (not a model, natural unretouched skin), wearing the school summer uniform: a light pastel-pink short-sleeve collared button-up shirt worn untucked, with a small red embroidered mark above the left chest pocket (no readable text), a navy-and-dark-green tartan pleated skirt ending just above the knee, black knee-high socks and black leather school shoes",
+   "voice_design": "A calm, low-key 17-year-old Taiwanese girl, soft but steady, few words and a hint of dryness, clear natural Taiwanese Mandarin accent.",
+   "voice_sample": "沒關係啊，這個我先拿去弄一下，等一下再還你，你不用急。",
+   "h3_voice": "a calm, steady, slightly low 17-year-old girl's voice",
+   "edge_voice": "zh-TW-HsiaoChenNeural",
+   "sub_color": "&H00C8A0FF"
+  },
+  "hui": {
+   "name": "輝仔",
+   "look": "Huizai, a 17-year-old Taiwanese high-school boy, about 176 cm, tall and lanky, light-to-medium skin, a narrow youthful face, thin round black-framed glasses, slightly messy black hair with a side part, a calm observant gaze, an ordinary-looking real Taiwanese teenager (not a model, natural unretouched skin), wearing the school summer uniform: a light powder-blue short-sleeve collared button-up shirt worn untucked, with a small red embroidered mark above the left chest pocket (no readable text), charcoal-grey straight-leg school trousers and black leather school shoes",
+   "voice_design": "A 17-year-old Taiwanese boy with a soft, even, deadpan voice, thoughtful with dry humor, slightly quiet, natural Taiwanese Mandarin accent.",
+   "voice_sample": "我覺得你可以先看一下這裡，剛剛那個地方好像有點不太一樣。",
+   "h3_voice": "a soft, even, deadpan 17-year-old boy's voice",
+   "edge_voice": "zh-TW-YunJheNeural",
+   "sub_color": "&H00FFC88C"
+  },
+  "cai": {
+   "name": "老蔡",
+   "look": "Teacher Cai, a Taiwanese male high-school math teacher in his late forties with a nerdy look, medium build with a slight belly, a round face with laugh lines, thick black-rimmed glasses, slightly messy short black hair graying at the temples, light stubble, wearing a plain white short-sleeve collared button-up shirt with a visibly wrinkled, crumpled collar and nothing in the chest pocket (no pen, no logo), loose khaki knee-length shorts and classic two-tone blue-and-white rubber flip-flops",
+   "voice_design": "A warm, relaxed Taiwanese man in his late forties, a math teacher with a slightly husky, straightforward voice, easygoing, Mandarin with a Taiwanese flavor, clear natural Taiwanese Mandarin accent.",
+   "voice_sample": "展現文化自信與學習的成果，經過多年的努力，超過九成的學生",
+   "h3_voice": "a warm, slightly husky middle-aged man's voice",
+   "edge_voice": "zh-TW-YunJheNeural",
+   "sub_color": "&H0080E6FF"
+  },
+  "gua": {
+   "name": "西瓜",
+   "look": "Xigua, a 17-year-old Taiwanese high-school boy, about 168 cm, plump with a round face and rosy cheeks, a bowl-shaped haircut of straight black hair with a flat horizontal fringe (watermelon-rind cut), an ordinary-looking real Taiwanese teenager (not a model, natural unretouched skin), wearing the school summer uniform: a light powder-blue short-sleeve collared button-up shirt worn untucked, with a small red embroidered mark above the left chest pocket (no readable text), charcoal-grey straight-leg school trousers and black leather school shoes",
+   "voice_design": "A cheerful, slightly nasal 17-year-old Taiwanese boy who laughs easily, natural Taiwanese Mandarin accent.",
+   "voice_sample": "哈哈哈你看那邊，那個東西好好笑喔，我快要忍不住了啦。",
+   "h3_voice": "a cheerful, slightly nasal 17-year-old boy's voice",
+   "edge_voice": "zh-TW-YunJheNeural",
+   "sub_color": "&H00C0C0C0"
+  }
+ },
+ "masters": {
+  "class_back": "A cinematic wide film still, shot on Kodak Vision3 500T film with an anamorphic lens. Inside an empty Taiwanese public high school classroom on a clear morning, seen from the back of the room looking toward the front: about twenty-four simple wooden desks and chairs in rows, a large green chalkboard with nothing written on it across the front wall, a plain wooden teacher's desk at the front slightly right of center, a front door on the RIGHT wall next to the chalkboard, and a row of large windows along the LEFT wall letting in soft warm morning sunlight with faint light beams. Clean, realistic, warm amber and soft teal color grade, subtle film grain. No people. No text, no watermark, no signs, no writing anywhere.",
+  "class_seats": "A cinematic wide film still, shot on Kodak Vision3 500T film with an anamorphic lens. Inside the same kind of empty Taiwanese public high school classroom on a clear morning, seen from the front corner of the room looking back toward the students' desks: rows of simple wooden desks and chairs, a row of large windows along the RIGHT side of the image letting in soft warm morning sunlight with faint light beams, a front door on the LEFT wall near the camera, a plain back wall with a bulletin board with nothing readable on it. Clean, realistic, warm amber and soft teal color grade, subtle film grain. No people. No text, no watermark, no signs, no writing anywhere.",
+  "dais": "A cinematic wide film still, shot on Kodak Vision3 500T film with an anamorphic lens. A wide concrete reviewing-stand platform of a Taiwanese high school with a broad staircase of five shallow steps facing an empty sports field, seen from field level at late-morning break time under bright overcast light, a red running track and green grass beyond, a few tiny distant students far away on the field; no one near the steps. Clean, realistic, warm amber and soft teal color grade, subtle film grain. No people. No text, no watermark, no signs, no writing anywhere.",
+  "class_dusk": "A cinematic wide film still, shot on Kodak Vision3 500T film with an anamorphic lens. The same kind of Taiwanese high school classroom at sunset, seen from the front corner looking back toward the desks: every chair is flipped upside down onto its desk except one single chair left on the floor at the third-row middle desk; deep orange-gold sunlight pours in from large windows along the RIGHT side of the image; a row of corridor windows along the LEFT wall, a front door at the left near the camera and a back door at the far end; dust floating in the light beams. Clean, realistic, warm amber and soft teal color grade, subtle film grain. No people. No text, no watermark, no signs, no writing anywhere."
+ },
+ "shots": [
+  {
+   "id": "S01",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "class_back",
+    [
+     0.0,
+     0.0,
+     1.0,
+     1.0
+    ]
+   ],
+   "dur": 5,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming through the windows on the LEFT side of the frame, warm side light, faint visible light beams in slightly dusty air. Wide shot from the back of the classroom from <image2>: about twenty students seen from behind in short-sleeve school uniform shirts (light blue for boys, light pink for girls) sit in rows with their heads bowed over pieces of cloth; at the front beside the teacher's desk the male teacher from <image1> sits quietly, and a small black rectangular portable speaker with a mesh grille, a short fabric carry strap and one tiny white LED stands at the corner of the desk with its LED lit. Nobody speaks.",
+   "action": "Everyone sews quietly with small movements; the teacher sits still beside the desk. The camera stays locked off.",
+   "extra_constraints": [
+    "The classmates in the background stay seated and barely move; they never speak."
+   ],
+   "cut_in": 0.0,
+   "cut_out": 4.0
+  },
+  {
+   "id": "S02",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.3,
+     0.45,
+     0.75,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Close-up of a boy's right hand holding a sewing needle over a small square of green felt on a wooden desk from <image2>, all five fingers wrapped with small beige band-aids, a single crooked stitch in the felt. The face of the boy from <image1> is not in the frame.",
+   "action": "The needle slips from between the taped fingers and drops onto the desk top; the hand freezes. Nothing else moves; the face never enters the frame.",
+   "cut_in": 0.0,
+   "cut_out": 3.0
+  },
+  {
+   "id": "S03",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.15,
+     0.3,
+     0.85,
+     1.0
+    ]
+   ],
+   "dur": 5,
+   "line": {
+    "who": "gou",
+    "text": "縫這個？這是女生做的啦！",
+    "at": 0.6,
+    "tts": "縫[:ㄈㄥ2]這個？這是女生做的啦！"
+   },
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium shot at eye level: the boy from <image1> stands up from his desk in the middle of the classroom from <image2> and holds up a small cloth sewing-kit pouch in his right hand, a cocky angry face, mouth open mid-shout; his fingers wear small band-aids. Seated classmates in short-sleeve school uniform shirts (light blue for boys, light pink for girls) sit frozen and out of focus around him. The windows are on the right side of the frame.",
+   "action": "He stands up, lifts the sewing-kit pouch and shouts his line with a scowl. The seated classmates stay still.",
+   "extra_constraints": [
+    "The classmates in the background stay seated and barely move; they never speak."
+   ],
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S04",
+   "refs": [
+    "lian"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.15,
+     0.3,
+     0.85,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium close-up: the girl from <image1> sits at her desk from <image2>, looks up toward the left for a moment with a calm unbothered face, then looks down again and keeps sewing a small square of green felt with a lopsided yellow star stitched on it. Seated classmates out of focus behind her have stopped sewing. The windows are on the right side of the frame.",
+   "action": "She glances up calmly, then lowers her eyes and continues sewing. She does not speak.",
+   "extra_constraints": [
+    "The classmates in the background stay seated and barely move; they never speak."
+   ],
+   "cut_in": 0.0,
+   "cut_out": 3.0
+  },
+  {
+   "id": "S05",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.15,
+     0.3,
+     0.85,
+     1.0
+    ]
+   ],
+   "dur": 6,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium wide shot from the front corner: the boy from <image1> stands in the middle of the seated classroom from <image2>, the sewing-kit pouch raised in one hand, seated classmates around him sitting still. The windows are on the right side of the frame.",
+   "action": "He stands still with the pouch raised, a sulky glare on his face; the classmates sit still. He does not speak.",
+   "extra_constraints": [
+    "The classmates in the background stay seated and barely move; they never speak."
+   ],
+   "cut_in": 0.0,
+   "cut_out": 5.5
+  },
+  {
+   "id": "S06",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "class_back",
+    [
+     0.4,
+     0.05,
+     1.0,
+     0.75
+    ]
+   ],
+   "dur": 5,
+   "line": {
+    "who": "cai",
+    "text": "旗明天要掛。少你這一塊，整面旗就缺一角。",
+    "at": 0.6,
+    "tts": "旗明天要掛。少[:ㄕㄠ3]你這一塊，整面旗就缺一角[:ㄐㄧㄠ3]。"
+   },
+   "frame": "Clear weekday morning, soft bright daylight streaming through the windows on the LEFT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium shot: the male teacher from <image1> sits behind the wooden teacher's desk from <image2>, eyes lowered on some papers and not looking up, his fingers tapping the desk; a small black rectangular portable speaker with a mesh grille, a short fabric carry strap and one tiny white LED stands at the desk corner. The windows are on the left side of the frame.",
+   "action": "He keeps his eyes down and taps the desk with his fingers, then says his line flatly without looking up.",
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S07",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.15,
+     0.3,
+     0.85,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "gou",
+    "text": "小事啦，我回家縫就好，免驚啦！",
+    "at": 0.5,
+    "tts": "小事啦，我回家縫[:ㄈㄥ2]就好，免驚啦！"
+   },
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium close-up: the boy from <image1> stands at his desk from <image2>, waving his hand dismissively with a forced nonchalant grin. The windows are on the right side of the frame.",
+   "action": "He waves his hand dismissively and says his line with a forced cocky grin.",
+   "cut_in": 0.3,
+   "tail": 0.3
+  },
+  {
+   "id": "S08",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "class_back",
+    [
+     0.4,
+     0.05,
+     1.0,
+     0.75
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "cai",
+    "text": "班會課縫完，才算數。",
+    "at": 0.5,
+    "tts": "班會課縫[:ㄈㄥ2]完，才算數[:ㄕㄨ4]。"
+   },
+   "frame": "Clear weekday morning, soft bright daylight streaming through the windows on the LEFT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium close-up: the male teacher from <image1> behind the teacher's desk from <image2>, still not looking up, a calm firm tone and a steady face. The windows are on the left side of the frame.",
+   "action": "He answers calmly and firmly, eyes still lowered.",
+   "cut_in": 0.3,
+   "tail": 0.3
+  },
+  {
+   "id": "S09",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.3,
+     0.45,
+     0.75,
+     1.0
+    ]
+   ],
+   "dur": 6,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Close-up of a boy's hands over a wooden desk from <image2>: all five fingers wrapped with small beige band-aids on the hand holding a needle, the other hand holding a limp, frayed end of white thread trying to reach the eye of the needle and missing it. The face of the boy from <image1> is not in the frame.",
+   "action": "The trembling hands try to thread the frayed thread into the needle, miss, try again and miss; the thread end bends. The face never enters the frame.",
+   "amb": true,
+   "cut_in": 0.0,
+   "cut_out": 4.5
+  },
+  {
+   "id": "S10",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.15,
+     0.3,
+     0.85,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium close-up: the boy from <image1> sits at his desk from <image2>, staring at the needle with narrowed eyes, his ears slowly turning red; two classmates out of focus in the background glance over and look away. The windows are on the right side of the frame.",
+   "action": "He glares at the needle, his ears and cheeks slowly flushing red; the classmates behind him glance and look away. He does not speak.",
+   "extra_constraints": [
+    "The classmates in the background stay seated and barely move; they never speak."
+   ],
+   "cut_in": 0.0,
+   "cut_out": 3.0
+  },
+  {
+   "id": "S11",
+   "refs": [
+    "lian"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.15,
+     0.3,
+     0.85,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "lian",
+    "text": "線頭剪斜一點，比較好穿。",
+    "at": 0.5
+   },
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium close-up: the girl from <image1> sits at her desk from <image2>, her needle laid down on the desk, turned toward the left to speak to the boy next to her, a calm helpful face. The windows are on the right side of the frame.",
+   "action": "She puts her needle down, turns her head toward him and says her tip calmly.",
+   "cut_in": 0.3,
+   "tail": 0.3
+  },
+  {
+   "id": "S12",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.15,
+     0.3,
+     0.85,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "gou",
+    "text": "妳當然會啊，妳是女生！",
+    "at": 0.4
+   },
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium close-up: the boy from <image1> at his desk from <image2>, snapping at the person on his right with a hot-tempered scowl, red ears. The windows are on the right side of the frame.",
+   "action": "He snaps his line sharply, with a defensive scowl.",
+   "cut_in": 0.3,
+   "tail": 0.3
+  },
+  {
+   "id": "S13",
+   "refs": [
+    "lian"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.15,
+     0.3,
+     0.85,
+     1.0
+    ]
+   ],
+   "dur": 6,
+   "line": {
+    "who": "lian",
+    "text": "我縫不好。縫不好，跟我是不是女生沒關係。",
+    "at": 0.8,
+    "tts": "我縫[:ㄈㄥ2]不好。縫[:ㄈㄥ2]不好，跟我是不是女生沒關係。"
+   },
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium close-up: the girl from <image1> holds a small square of green felt with a lopsided yellow star stitched on it up toward the camera at the level of her face, the star visibly crooked with uneven stitches, from <image2>; she looks calm and not angry. The windows are on the right side of the frame.",
+   "action": "She calmly lifts the felt patch up toward the camera and says her line without any anger.",
+   "cut_in": 0.3,
+   "tail": 0.5
+  },
+  {
+   "id": "S14",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.15,
+     0.3,
+     0.85,
+     1.0
+    ]
+   ],
+   "dur": 5,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium close-up: the boy from <image1> at his desk from <image2>, staring at something held out in front of him, his shoulders relax a little, then he glances down at his band-aid-covered fingers and his shoulders hunch up again. The windows are on the right side of the frame.",
+   "action": "His shoulders drop in a small relief while staring at the patch; then he looks at his taped fingers and hunches up again. He does not speak.",
+   "cut_in": 0.0,
+   "cut_out": 4.0
+  },
+  {
+   "id": "S15",
+   "refs": [
+    "lian"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.15,
+     0.3,
+     0.85,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium close-up: the girl from <image1> sits at her desk from <image2>, sewing calmly, a slight natural half-smile, relaxed. The windows are on the right side of the frame.",
+   "action": "She keeps sewing calmly and relaxed. She does not speak.",
+   "cut_in": 0.0,
+   "cut_out": 3.5
+  },
+  {
+   "id": "S16",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_back",
+    [
+     0.55,
+     0.1,
+     1.0,
+     0.95
+    ]
+   ],
+   "dur": 6,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming through the windows on the LEFT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium wide shot from behind: the boy from <image1> stands from his seat near the front of the classroom from <image2> and walks toward the front door on the right wall; seated classmates in the foreground turn their heads to watch him go. The windows are on the left side of the frame.",
+   "action": "Seen from behind, he pushes in his chair, walks to the front door and steps out without looking back; a few classmates turn their heads. The camera stays locked off.",
+   "extra_constraints": [
+    "The classmates in the background stay seated and barely move; they never speak."
+   ],
+   "amb": true,
+   "cut_in": 0.0,
+   "cut_out": 5.0
+  },
+  {
+   "id": "S17",
+   "refs": [
+    "hui"
+   ],
+   "scene": [
+    "class_seats",
+    [
+     0.1,
+     0.45,
+     0.6,
+     1.0
+    ]
+   ],
+   "dur": 8,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming in through the windows on the RIGHT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium close-up: the boy from <image1> with round glasses sits at his window-side desk from <image2>, quietly sliding a small square of green felt with a lopsided yellow star stitched on it under an open textbook with one hand, head down, pretending to be busy. The windows are on the right side of the frame.",
+   "action": "He slides the felt patch under the textbook, then bends his head over the book as if nothing happened. He does not speak.",
+   "cut_in": 0.0,
+   "cut_out": 7.5
+  },
+  {
+   "id": "S18",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "class_back",
+    [
+     0.4,
+     0.05,
+     1.0,
+     0.75
+    ]
+   ],
+   "dur": 6,
+   "line": null,
+   "frame": "Clear weekday morning, soft bright daylight streaming through the windows on the LEFT side of the frame, warm side light, faint visible light beams in slightly dusty air. Medium shot: the male teacher from <image1> sits at the teacher's desk from <image2>, his eyes on the front door for a beat, then he picks up a small black rectangular portable speaker with a mesh grille, a short fabric carry strap and one tiny white LED by its strap and stands up. The windows are on the left side of the frame.",
+   "action": "He looks toward the door for a moment, then picks up the speaker and slowly stands. He does not speak.",
+   "amb": true,
+   "cut_in": 0.0,
+   "cut_out": 4.5
+  },
+  {
+   "id": "S19",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.05,
+     0.2,
+     0.85,
+     0.95
+    ]
+   ],
+   "dur": 5,
+   "line": null,
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium wide shot: the boy from <image1> sits alone on the wide concrete steps of the reviewing-stand platform from <image2>, elbows on knees, both hands clamped between his knees, back hunched; the empty field beyond with tiny distant figures.",
+   "action": "He sits hunched and still, his breathing visible in the slight movement of his shoulders. He does not speak.",
+   "cut_in": 0.0,
+   "cut_out": 4.0
+  },
+  {
+   "id": "S20",
+   "refs": [
+    "gou",
+    "cai"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 6,
+   "line": null,
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium shot: the male teacher from <image2> has just sat down on the concrete step beside the boy from <image1> on the reviewing-stand steps from <image3>, and puts a small black rectangular portable speaker with a mesh grille, a short fabric carry strap and one tiny white LED on the step by his feet with its LED still lit; the boy keeps his head down. Exactly two people in the frame.",
+   "action": "The teacher sits down heavily beside the boy and sets the speaker on the step; the boy does not move. Neither of them speaks.",
+   "cut_in": 0.0,
+   "cut_out": 5.0
+  },
+  {
+   "id": "S21",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.3,
+     0.65,
+     0.65,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": null,
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Close-up at step level: a small black rectangular portable speaker with a mesh grille, a short fabric carry strap and one tiny white LED on the concrete step next to one foot in a blue-and-white flip-flop; a man's thumb reaches in from above and presses its switch, and the tiny white LED turns off.",
+   "action": "A thumb presses the speaker's switch and the white LED light goes dark. Nothing else moves.",
+   "cut_in": 0.0,
+   "cut_out": 2.5
+  },
+  {
+   "id": "S22",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "cai",
+    "text": "吼完，有比較不丟臉嗎？",
+    "at": 0.6
+   },
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium close-up: the male teacher from <image1> sits on the concrete steps from <image2>, looking gently out toward the field, a patient warm face.",
+   "action": "He speaks gently without turning his head.",
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S23",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "gou",
+    "text": "我哪有丟臉。",
+    "at": 0.5
+   },
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium close-up: the boy from <image1> sits on the concrete steps from <image2>, hunched, avoiding eye contact, mumbling with a sullen face.",
+   "action": "He mumbles his denial without raising his head.",
+   "cut_in": 0.3,
+   "tail": 0.5
+  },
+  {
+   "id": "S24",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 5,
+   "line": {
+    "who": "cai",
+    "text": "你剛剛吼的時候，胸口是燙的，還是縮的？",
+    "at": 0.6
+   },
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium close-up: the male teacher from <image1> on the concrete steps from <image2>, turning his head toward the boy beside him and tapping his own chest lightly with a fingertip, a curious kind face.",
+   "action": "He turns toward the boy, taps his chest lightly and asks his question.",
+   "cut_in": 0.3,
+   "tail": 0.5
+  },
+  {
+   "id": "S25",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "gou",
+    "text": "縮起來的。",
+    "at": 0.6
+   },
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium close-up: the boy from <image1> on the concrete steps from <image2>, quietly pressing his folded arms against his chest, eyes down.",
+   "action": "He answers in a very small voice, arms pulled in tight against his chest.",
+   "cut_in": 0.3,
+   "tail": 0.6
+  },
+  {
+   "id": "S26",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "cai",
+    "text": "縮起來的那個，叫什麼？",
+    "at": 0.5
+   },
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium close-up: the male teacher from <image1> on the concrete steps from <image2>, looking at the boy beside him with soft attention, one eyebrow slightly raised.",
+   "action": "He asks the question softly and waits.",
+   "cut_in": 0.3,
+   "tail": 0.6
+  },
+  {
+   "id": "S27",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 6,
+   "line": {
+    "who": "gou",
+    "text": "丟臉啦。",
+    "at": 2.0
+   },
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Close-up: the boy from <image1> on the concrete steps from <image2>, head down, a long silent pause, then a tiny swallow before he answers.",
+   "action": "After a long silence he finally answers in a tiny voice, head down.",
+   "cut_in": 0.5,
+   "tail": 0.9
+  },
+  {
+   "id": "S28",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 5,
+   "line": {
+    "who": "cai",
+    "text": "對。生氣是外面那層，丟臉在裡面。",
+    "at": 0.5
+   },
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium close-up: the male teacher from <image1> on the concrete steps from <image2>, nodding slowly with a kind steady look.",
+   "action": "He nods slowly and says his line gently.",
+   "cut_in": 0.3,
+   "tail": 0.6
+  },
+  {
+   "id": "S29",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "gou",
+    "text": "我才不要被看到我不會。",
+    "at": 0.5
+   },
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium close-up: the boy from <image1> on the concrete steps from <image2>, hunched, a stubborn pout.",
+   "action": "He mutters his line stubbornly.",
+   "cut_in": 0.3,
+   "tail": 0.5
+  },
+  {
+   "id": "S30",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 6,
+   "line": {
+    "who": "cai",
+    "text": "不會，大家看得出來。你吼，只是讓他們多看一眼。",
+    "at": 0.5
+   },
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium close-up: the male teacher from <image1> on the concrete steps from <image2>, a gentle direct honest look, no smile.",
+   "action": "He answers plainly and gently.",
+   "cut_in": 0.3,
+   "tail": 0.5
+  },
+  {
+   "id": "S31",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.3,
+     0.65,
+     0.65,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": null,
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Close-up of a boy's hands resting between his knees on the concrete step from <image2>, all five fingers wrapped with small beige band-aids; the face of the boy from <image1> is not in the frame.",
+   "action": "The taped hands slowly pull in and tuck themselves under his folded forearms, out of sight. The face never enters the frame.",
+   "cut_in": 0.0,
+   "cut_out": 3.0
+  },
+  {
+   "id": "S32",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 6,
+   "line": {
+    "who": "cai",
+    "text": "放學後，教室的燈我不關。",
+    "at": 0.8
+   },
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium shot: the male teacher from <image1> stands up from the concrete step from <image2>, patting his shorts with one hand, a small black rectangular portable speaker with a mesh grille, a short fabric carry strap and one tiny white LED in the other, looking down gently.",
+   "action": "He stands, pats his shorts, says his line, then turns and walks away from the camera. The camera stays locked off and does not follow.",
+   "cut_in": 0.3,
+   "tail": 0.2
+  },
+  {
+   "id": "S33",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "dais",
+    [
+     0.2,
+     0.45,
+     0.7,
+     0.95
+    ]
+   ],
+   "dur": 5,
+   "line": null,
+   "frame": "Late-morning break time, soft bright overcast light with gentle shadows, neutral daylight with natural warm skin tones. Medium close-up: the boy from <image1> sits alone on the concrete steps from <image2>, looking down at his own hands, his clenched fist slowly loosening.",
+   "action": "He looks at his own hands and slowly opens his clenched fist. He does not speak.",
+   "cut_in": 0.0,
+   "cut_out": 4.0
+  },
+  {
+   "id": "S34",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.1,
+     0.15,
+     0.9,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": null,
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Wide shot from the front corner: the classroom from <image2> is orange with sunset, every chair upturned on the desks except the single chair in the third row where the boy from <image1> sits alone at his desk.",
+   "action": "He sits quietly alone in the empty room; dust floats in the light. He does not speak.",
+   "cut_in": 0.0,
+   "cut_out": 3.0
+  },
+  {
+   "id": "S35",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.35,
+     0.5,
+     0.7,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": null,
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Close-up of a wooden desk top from <image2> in warm sunset light: several small crumpled felt patches with crooked stitches, snipped thread ends, and an empty small cardboard band-aid box; a boy's hands at the edge of the frame; the face of the boy from <image1> is not in the frame.",
+   "action": "Static: the desk top with the failed patches; a hand moves one scrap slightly. The face never enters the frame.",
+   "cut_in": 0.0,
+   "cut_out": 3.0
+  },
+  {
+   "id": "S36",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.35,
+     0.5,
+     0.7,
+     1.0
+    ]
+   ],
+   "dur": 6,
+   "line": null,
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Close-up of a boy's hands at a wooden desk from <image2> in sunset light: scissors snip a thread end at a diagonal, then the thread slides cleanly through the eye of a needle in one try; the boy from <image1> sits behind, partly visible, a tiny twitch at the corner of his mouth.",
+   "action": "The hands cut the thread end at a slant and pass it through the needle's eye on the first try; the boy's mouth twitches slightly and then he starts to sew. He does not speak.",
+   "cut_in": 0.0,
+   "cut_out": 5.0
+  },
+  {
+   "id": "S37",
+   "refs": [
+    "hui"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.0,
+     0.1,
+     0.45,
+     0.9
+    ]
+   ],
+   "dur": 4,
+   "line": null,
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium shot at eye level toward the classroom's front door from <image2>: the boy from <image1> with round glasses stands in the open doorway holding a small square of green felt with a lopsided yellow star stitched on it in his hand, frozen in surprise.",
+   "action": "He opens the door, spots someone inside and freezes with the patch in his hand. He does not speak.",
+   "cut_in": 0.0,
+   "cut_out": 3.0
+  },
+  {
+   "id": "S38",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.35,
+     0.5,
+     0.7,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "gou",
+    "text": "你怎麼回來了？",
+    "at": 0.5
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium close-up: the boy from <image1> at his desk from <image2>, one forearm sweeping the scraps and thread ends on the desk toward himself, startled and defensive.",
+   "action": "He sweeps the scraps toward himself with his forearm and speaks, startled and defensive.",
+   "cut_in": 0.3,
+   "tail": 0.3
+  },
+  {
+   "id": "S39",
+   "refs": [
+    "hui"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.0,
+     0.1,
+     0.45,
+     0.9
+    ]
+   ],
+   "dur": 5,
+   "line": {
+    "who": "hui",
+    "text": "拿東西。……六塊。繃也貼光了。",
+    "at": 0.5,
+    "tts": "拿東西，六塊，繃[:ㄅㄥ]也貼光了。"
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium close-up: the boy from <image1> with round glasses in the doorway from <image2>, deadpan, looking at something on the desk in front of him.",
+   "action": "He answers in a flat dry tone.",
+   "cut_in": 0.3,
+   "tail": 0.3
+  },
+  {
+   "id": "S40",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.35,
+     0.5,
+     0.7,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "gou",
+    "text": "不准講。",
+    "at": 0.4
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Close-up: the boy from <image1> at his desk from <image2>, embarrassed and sulky, pressing his lips together, ears red.",
+   "action": "He says his line quickly with embarrassment.",
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S41",
+   "refs": [
+    "hui"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.0,
+     0.1,
+     0.45,
+     0.9
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "hui",
+    "text": "放心，我的嘴，打結了。",
+    "at": 0.5,
+    "tts": "放心，我的嘴，打結[:ㄐㄧㄝ2]了。"
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium close-up: the boy from <image1> with round glasses from <image2>, a small reassuring half-smile, mimes zipping his mouth shut with two fingers.",
+   "action": "He mimes a knot at his mouth with a small smile and says his line.",
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S42",
+   "refs": [
+    "hui"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.25,
+     0.3,
+     0.75,
+     0.95
+    ]
+   ],
+   "dur": 5,
+   "line": {
+    "who": "hui",
+    "text": "我也是回來重縫的。",
+    "at": 0.8,
+    "tts": "我也是回來重[:ㄔㄨㄥ2]縫[:ㄈㄥ2]的。"
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium shot: the boy from <image1> with round glasses sits down at the desk beside the camera in the sunset classroom from <image2> and sets a small square of green felt with a lopsided yellow star stitched on it down on the desk top.",
+   "action": "He sits and sets his patch on the desk, then says his line quietly.",
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S43",
+   "refs": [
+    "lian"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.0,
+     0.1,
+     0.45,
+     0.9
+    ]
+   ],
+   "dur": 5,
+   "line": {
+    "who": "lian",
+    "text": "我的也要重縫。",
+    "at": 0.6,
+    "tts": "我的也要重[:ㄔㄨㄥ2]縫[:ㄈㄥ2]。"
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium shot toward the classroom's back door from <image2>: the girl from <image1> stands in the doorway in the sunset light holding a small square of green felt with a lopsided yellow star stitched on it with the star visibly crooked.",
+   "action": "She holds the patch up slightly and says her line simply.",
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S44",
+   "refs": [
+    "gou",
+    "hui",
+    "lian"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.25,
+     0.3,
+     0.75,
+     0.95
+    ]
+   ],
+   "dur": 6,
+   "line": null,
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium wide shot: three students sit side by side at adjacent desks in the sunset classroom from <image4>, heads bowed over their sewing in warm light: the boy from <image1> at the left, the boy with glasses from <image2> in the middle and the girl with the ponytail from <image3> at the right. Exactly three people in the frame.",
+   "action": "The three sew in silence, small hand movements only; dust floats in the sunlight. Nobody speaks.",
+   "cut_in": 0.0,
+   "cut_out": 4.5
+  },
+  {
+   "id": "S45",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.35,
+     0.5,
+     0.7,
+     1.0
+    ]
+   ],
+   "dur": 6,
+   "line": {
+    "who": "gou",
+    "text": "剛剛那句，是我亂講的。我不是氣妳，是怕被看到我不會。",
+    "at": 0.6
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium close-up: the boy from <image1> at his desk from <image2>, his needle set down, looking toward the right of the frame at the others, sincere and a bit awkward.",
+   "action": "He sets the needle down, looks toward the others and says his apology sincerely and awkwardly.",
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S46",
+   "refs": [
+    "lian"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.25,
+     0.3,
+     0.75,
+     0.95
+    ]
+   ],
+   "dur": 5,
+   "line": {
+    "who": "lian",
+    "text": "嗯。而且你縫得比我直。",
+    "at": 0.6,
+    "tts": "嗯。而且你縫[:ㄈㄥ2]得比我直。"
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium close-up: the girl from <image1> in the sunset classroom from <image2>, looking down at the desk, a calm half-smile, the side of her face in warm light.",
+   "action": "She glances down at his work, then answers briefly with a quiet half-smile.",
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S47",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.35,
+     0.5,
+     0.7,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": null,
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium close-up: the boy from <image1> at his desk from <image2> holding up a small square of green felt with a neatly stitched yellow star with one slightly crooked corner, staring at it in stunned silence, his ears turning red again.",
+   "action": "He stares at his own patch, stunned, ears flushing again. He does not speak.",
+   "cut_in": 0.0,
+   "cut_out": 3.0
+  },
+  {
+   "id": "S48",
+   "refs": [
+    "hui"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.25,
+     0.3,
+     0.75,
+     0.95
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "hui",
+    "text": "那我歪得最有風格。",
+    "at": 0.5
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium close-up: the boy from <image1> with round glasses in the sunset classroom from <image2>, holding up his crooked patch with a deadpan proud look.",
+   "action": "He lifts his lopsided patch with mock pride and says his line deadpan.",
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S49",
+   "refs": [
+    "gou",
+    "hui",
+    "lian"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.25,
+     0.3,
+     0.75,
+     0.95
+    ]
+   ],
+   "dur": 7,
+   "line": null,
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium wide shot from behind and slightly above: the backs and bowed heads of three students (the boy from <image1>, the boy with glasses from <image2> and the girl with the ponytail from <image3>) sit close together at adjacent desks in the sunset classroom from <image4>, strongly backlit, sunlight glowing on their hair, faces not visible. Exactly three people in the frame.",
+   "action": "The three heads bend over their sewing, slow small hand movements, the sunlight glowing on their hair. Nobody speaks.",
+   "cut_in": 0.0,
+   "cut_out": 6.0
+  },
+  {
+   "id": "S50",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.0,
+     0.1,
+     0.5,
+     0.85
+    ]
+   ],
+   "dur": 5,
+   "line": {
+    "who": "cai",
+    "text": "免驚啦。",
+    "at": 0.8
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium shot from inside the classroom toward the corridor window from <image2>: the male teacher from <image1> stands in the corridor outside the window with a small black rectangular portable speaker with a mesh grille, a short fabric carry strap and one tiny white LED on his shoulder, smiling warmly, not coming in.",
+   "action": "He stands outside the window with the speaker on his shoulder, smiles, and says his line cheerfully.",
+   "cut_in": 0.3,
+   "tail": 0.4
+  },
+  {
+   "id": "S51",
+   "refs": [
+    "gou"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.35,
+     0.5,
+     0.7,
+     1.0
+    ]
+   ],
+   "dur": 4,
+   "line": {
+    "who": "gou",
+    "text": "那是我的！",
+    "at": 0.5
+   },
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Medium close-up: the boy from <image1> at his desk from <image2>, turning toward the window on the left with an indignant face, pointing a finger.",
+   "action": "He turns toward the window and protests indignantly.",
+   "cut_in": 0.3,
+   "tail": 0.3
+  },
+  {
+   "id": "S52",
+   "refs": [
+    "cai"
+   ],
+   "scene": [
+    "class_dusk",
+    [
+     0.0,
+     0.1,
+     0.5,
+     0.85
+    ]
+   ],
+   "dur": 8,
+   "line": null,
+   "frame": "Sunset, deep orange-gold sunlight pouring through the windows on the RIGHT side of the frame, long warm shadows across the floor, a glowing rim light on hair, dust floating in the beams. Close-up of a window sill in the sunset corridor from <image2>: a small black rectangular portable speaker with a mesh grille, a short fabric carry strap and one tiny white LED standing on the sill with its white LED lit, a man's hand just withdrawing from the frame after setting it down.",
+   "action": "The speaker sits still on the sill with its LED glowing; the hand withdraws. Nothing else moves.",
+   "cut_in": 0.0,
+   "cut_out": 7.5
+  }
+ ],
+ "seeds": {},
+ "music": {
+  "caption": "Genre: light, warm Taiwanese coming-of-age school comedy-drama underscore, purely instrumental film score, gently mischievous at first, then tender and reassuring. BPM 88, key G major.\nVocal: NONE. No singing, no humming, no choir.\nArrangement: nylon-string guitar, light marimba, soft upright bass, warm Rhodes piano, brushed snare, a little glockenspiel.",
+  "seeds": [
+   7,
+   23,
+   51
+  ]
+ },
+ "mix": {
+  "say_lead": 0.2,
+  "default_tail": 0.55,
+  "music_under_lines": 0.25,
+  "music_bed_rms": 0.03,
+  "target_lufs": -15.5
+ },
+ "ending": {
+  "closeups": [
+   "S33",
+   "S45"
+  ],
+  "header": "本片使用的 AI 工具（全部本機執行）",
+  "card_dur": 3.0,
+  "title_dur": 3.5,
+  "cards": [
+   [
+    [
+     "MiniMax H3",
+     "影片生成"
+    ],
+    [
+     "Qwen-Image 2.1／Edit 2511",
+     "角色與首幀"
+    ],
+    [
+     "MiniMax-Music3",
+     "配樂生成"
+    ]
+   ],
+   [
+    [
+     "BreezyVoice＋Breeze TTS 2",
+     "配音"
+    ],
+    [
+     "faster-whisper・BS-RoFormer・RTX VSR",
+     "校對／分離／放大"
+    ],
+    [
+     "本片畫面、配音與配樂皆由 AI 生成",
+     ""
+    ]
+   ]
+  ]
+ }
+}

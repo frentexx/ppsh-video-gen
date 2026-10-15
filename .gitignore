@@ -2,3 +2,13 @@
 repo/
 repo-16gvram-32gram/
 repo-16gvram-64gram/
+
+# 真實學生照片（個資），不進 repo
+input_pic/
+# 盲評對照表
+.scratch_key/
+# 真人聲音（需當事人同意），不進 repo
+input_voice/
+.備份/
+# 製作產出（含校長聲音 ref_cai.wav、配音、影片），不進 repo
+製作/**/out/

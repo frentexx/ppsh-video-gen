@@ -81,6 +81,20 @@ li{margin:.3em 0}
 .ep .q b{color:var(--pink);font-weight:500}
 .ep .vote{font-size:1.45cqw;color:var(--blue);line-height:1.45}
 
+
+/* 草稿 v2：兩欄集數、成長線表 */
+.eps.two{grid-template-columns:1fr 1fr}
+.eps.two .ep{gap:.9cqw}
+.eps.two .no{font-size:2.5cqw}
+.eps.two .story{font-size:1.6cqw}
+.eps.two + .q{border-top:.15cqw dashed var(--line);padding-top:1cqw}
+.grow{width:100%;border-collapse:collapse;font-size:1.55cqw;line-height:1.4;flex:1}
+.grow th,.grow td{border:.12cqw solid var(--line);padding:.8cqw 1cqw;text-align:left;vertical-align:middle}
+.grow thead th{color:var(--yellow);font-weight:500;font-family:var(--display);font-size:1.8cqw}
+.grow tbody th{font-family:var(--display);font-weight:400;font-size:2.1cqw;white-space:nowrap}
+.grow small{display:block;font-family:var(--body);font-size:1.25cqw;color:var(--chalk-dim)}
+.grow td.hl{color:var(--yellow)}
+
 /* 地雷清單 */
 .mines{display:grid;grid-template-columns:1fr 1fr;gap:.4cqw 2.4cqw;flex:1;align-content:start}
 .mine{display:flex;gap:1.2cqw;align-items:flex-start;text-align:left;background:none;border:0;color:inherit;font:inherit;
@@ -120,7 +134,9 @@ li{margin:.3em 0}
   .big,.mid,.kv,.ask ol,.goal span,.rule,.steps{font-size:16px}
   .tag,.time,.small,.note,.legend,.ep .story,.ep .vote,.mine span{font-size:13px}
   .fact .n{font-size:36px} .ep .no{font-size:22px}
-  .cover .goals,.facts,.char,.eps,.mines,.two{grid-template-columns:1fr;gap:14px}
+  .cover .goals,.facts,.char,.eps,.eps.two,.mines,.two{grid-template-columns:1fr;gap:14px}
+  .eps.two .no{font-size:20px} .eps.two .story{font-size:14px}
+  .grow{display:block;overflow-x:auto;font-size:13px} .grow tbody th{font-size:15px}
   .box{width:22px;height:22px;font-size:15px}
   .bar{display:none}
 }
@@ -148,19 +164,19 @@ li{margin:.3em 0}
   <h2>用學生自己的生活，練習<span class="underline">情緒與人際</span>的能力</h2>
   <div class="facts">
     <div class="fact"><div class="n">6</div><div class="u">集，一集練一種能力<br><span class="small">搭配一個生活議題</span></div></div>
-    <div class="fact"><div class="n">3</div><div class="u">分鐘一集<br><span class="small">手機直式短影音</span></div></div>
+    <div class="fact"><div class="n">3</div><div class="u">分鐘一集<br><span class="small">橫式影片，投影、手機都能看</span></div></div>
     <div class="fact"><div class="n">1</div><div class="u">個月播一集<br><span class="small">片尾讓學生投票</span></div></div>
   </div>
   <p class="mid">每集片尾，學生用手機寫一個詞，<span class="b">最多人寫的那個詞會出現在下一集</span>，例如老師騎什麼出場、主角講哪句台詞。</p>
   <div class="rule">畫面用 AI 製作，不需要找學生演出。<br>所以<span class="y">老師們今天說的真實樣子，就是劇本的來源。</span></div>
 </section>
 
-<!-- 3 黑狗 -->
-<section class="slide" aria-label="角色：黑狗">
+<!-- 3 大頭 -->
+<section class="slide" aria-label="角色：大頭">
   <div class="top"><span class="tag">角色 1／4　主角</span></div>
   <div class="char">
     <div>
-      <div class="name"><h1>黑狗</h1><span class="who">衝動、講義氣的庄腳囝仔</span></div>
+      <div class="name"><h1>大頭</h1><span class="who">衝動、講義氣的庄腳囝仔</span></div>
       <dl class="kv">
         <dt>個性</dt><dd>脾氣來得快去得快，被拱就上，對朋友很挺</dd>
         <dt>家裡</dt><dd>務農（種什麼待定）</dd>
@@ -172,7 +188,7 @@ li{margin:.3em 0}
       <span class="h">請老師補</span>
       <ol>
         <li>我們學生家裡最常做什麼工作、種什麼？</li>
-        <li>像黑狗這樣的學生，最常在哪裡、為了什麼惹麻煩？</li>
+        <li>像大頭這樣的學生，最常在哪裡、為了什麼惹麻煩？</li>
         <li>他們現在最常講的口頭禪是什麼？</li>
       </ol>
     </div>
@@ -184,20 +200,20 @@ li{margin:.3em 0}
   <div class="top"><span class="tag">角色 2／4　女主角</span></div>
   <div class="char">
     <div>
-      <div class="name"><h1>阿蓮</h1><span class="who">冷靜、手很巧的原住民女生</span></div>
+      <div class="name"><h1>阿蓮</h1><span class="who">冷靜、手很巧的女生</span></div>
       <dl class="kv">
         <dt>個性</dt><dd>話不多、遇事很冷靜，討厭別人說「女生就該怎樣」</dd>
         <dt>家裡</dt><dd>開機車行，從小就會修車</dd>
-        <dt>身分</dt><dd>原住民，族名與漢名都有；這是她的日常，<span class="y">不是她的笑點</span></dd>
+        <dt>特色</dt><dd>不愛說話，<span class="y">用做的</span>代替說的</dd>
         <dt>成長</dt><dd>學會不只自己做好，也開口說出感受</dd>
       </dl>
     </div>
     <div class="ask">
       <span class="h">請老師補</span>
       <ol>
-        <li>她是哪一族？族名怎麼取比較自然？（請原住民老師建議）</li>
+        <li>手巧的女生在我們學校，最常被同學怎麼說？</li>
         <li>她每天怎麼上學？住校、通車，還是家人載？</li>
-        <li>我們的原住民學生最不喜歡被怎麼看待？</li>
+        <li>她會在意什麼？什麼事會讓她開口？</li>
       </ol>
     </div>
   </div>
@@ -232,7 +248,7 @@ li{margin:.3em 0}
   <div class="top"><span class="tag">角色 4／4　導師</span></div>
   <div class="char">
     <div>
-      <div class="name"><h1>老蔡</h1><span class="who">穿藍白拖的導師兼體育老師</span></div>
+      <div class="name"><h1>老蔡</h1><span class="who">穿藍白拖的導師兼數學老師</span></div>
       <dl class="kv">
         <dt>個性</dt><dd>直白溫暖，不講大道理，一句話就點到痛處</dd>
         <dt>招牌</dt><dd>藍白拖、隨身小音響、國台語夾雜</dd>
@@ -251,68 +267,115 @@ li{margin:.3em 0}
   </div>
 </section>
 
-<!-- 7 第1-3集 -->
-<section class="slide" aria-label="第一到三集">
-  <div class="top"><span class="tag">六集故事（上）　每集只討論一個問題</span></div>
-  <div class="eps">
+<!-- 7 第1集兩個版本 -->
+<section class="slide" aria-label="第一集兩個版本">
+  <div class="top"><span class="tag">第 1 集　認識自己的情緒 × 性別平等　已寫好兩個版本，請老師比較</span></div>
+  <div class="eps two">
     <article class="ep">
-      <div class="no">第 1 集</div>
-      <div class="theme">認識自己的情緒 × 性別平等</div>
-      <p class="story">黑狗的機車在校門口拋錨，阿蓮三分鐘修好。黑狗嘴硬生悶氣，老蔡點破：你不是生氣，是覺得丟臉。</p>
-      <p class="q"><b>想一想：</b>我們學生最常聽到的「男生就該、女生就該」是哪一句？</p>
-      <p class="vote">片尾投票：老蔡下一集騎什麼出場？</p>
+      <div class="no">版本甲〈黃線〉</div>
+      <p class="story">大頭在學弟妹面前把外套袖子扯破、被笑，偷偷藏起來；隔天外套被人用歪歪的黃線補好放回桌上。他一路追查：先認定「會針線的一定是女生」去質問阿蓮——阿蓮只會修、不會縫。最後發現縫的人是最不會縫的老蔡。</p>
+      <p class="story">老蔡只問：「你剛剛講了幾遍『不在乎』？」大頭自己說出：<span class="y">「我不是氣，是丟臉。」</span></p>
+      <p class="vote">片尾投票：大頭袖口的補丁，縫成什麼圖案最適合？</p>
     </article>
     <article class="ep">
-      <div class="no">第 2 集</div>
+      <div class="no">版本乙〈一針見血〉</div>
+      <p class="story">班會課每人縫一塊布章，手指貼滿繃帶的大頭吼：「這是女生做的啦！」阿蓮亮出自己歪歪的布章：「我也縫不好，跟性別沒關係。」大頭走出教室，老蔡跟出去。</p>
+      <p class="story">老蔡問：「吼完有比較不丟臉嗎？」大頭說出<span class="y">「是丟臉」</span>。放學後才發現，他早就在偷偷練，而且全班都留下來練。</p>
+      <p class="vote">片尾投票：大頭想吼人之前，先在心裡喊哪個詞？</p>
+    </article>
+  </div>
+  <p class="q mid"><b class="p">想一想：</b>哪一個比較像我們的學生？我們學生最常聽到的「男生就該、女生就該」是哪一句？</p>
+</section>
+
+<!-- 8 第2-3集 -->
+<section class="slide" aria-label="第二到三集">
+  <div class="top"><span class="tag">六集故事　第 2～3 集</span></div>
+  <div class="eps two">
+    <article class="ep">
+      <div class="no">第 2 集〈九十秒紅燈〉</div>
       <div class="theme">控制衝動 × 交通安全</div>
-      <p class="story">隔壁班拱黑狗「沒駕照敢不敢騎」，黑狗差點上鉤，最後學會先停三秒再拒絕。</p>
-      <p class="q"><b>想一想：</b>學生騎車最常見的是哪一種狀況？被拱的時候，他們通常怎麼回？</p>
-      <p class="vote">片尾投票：最嗆但不傷人的拒絕台詞</p>
+      <p class="story">鄉下路口的紅燈超長、路上沒車，輝仔又傳來「你再不來就沒了」。大頭腳尖頂著停止線，一度抬腳——低頭看見腳已經超過線，收了回來，和阿蓮一起默數。綠燈後才發現，「緊急」只是輝仔的冷笑話。</p>
+      <p class="story">大頭：<span class="y">「我是在忍我自己。」</span></p>
+      <p class="q"><b>想一想：</b>學生上下學，最常遇到哪一種交通狀況？</p>
+      <p class="vote">片尾投票：紅燈前那幾秒，你腦袋在想什麼？</p>
     </article>
     <article class="ep">
-      <div class="no">第 3 集</div>
-      <div class="theme">團隊與體諒 × 運動健康</div>
-      <p class="story">體育課籃球賽，第一次打球的輝仔一直漏接，黑狗差點爆氣，最後改成把球傳給他。</p>
-      <p class="q"><b>想一想：</b>學生下課和體育課，真的都在做什麼？</p>
-      <p class="vote">片尾投票：老蔡放哪一種曲風叫大家起來動？</p>
+      <div class="no">第 3 集〈紅貼紙〉</div>
+      <div class="theme">團隊與體諒 × 運動健康（睡眠）</div>
+      <p class="story">全班挑戰「連續五天睡飽」，貼紙牆上只有阿傑一格永遠是紅的。大頭準備當眾點名，停下來那一刻，看到自己的綠貼紙——昨晚他其實看影片到半夜。</p>
+      <p class="story">他自己撕下綠貼紙換成紅的，輝仔第一次先開口：<span class="y">「我也……其實是紅的。」</span></p>
+      <p class="q"><b>想一想：</b>我們學生最常見的健康問題是哪一個？</p>
+      <p class="vote">片尾投票：班上最「看不見」但很重要的一件事？</p>
     </article>
   </div>
 </section>
 
-<!-- 8 第4-6集 -->
-<section class="slide" aria-label="第四到六集">
-  <div class="top"><span class="tag">六集故事（下）　粉紅框＝需要特別討論</span></div>
-  <div class="eps">
+<!-- 9 第4集兩個方向 -->
+<section class="slide" aria-label="第四集兩個方向">
+  <div class="top"><span class="tag">第 4 集　做對的選擇 × 多元文化　粉紅框＝今天要請老師決定</span></div>
+  <div class="eps two">
     <article class="ep flag">
-      <div class="no">第 4 集</div>
-      <div class="theme">做對的選擇 × 多元文化</div>
-      <p class="story">同學隨口一句玩笑話，刺到了阿蓮或輝仔。黑狗本來跟著笑，後來選擇出聲。</p>
-      <p class="q"><b>想一想：</b>要不要直接演出這種「隨口的一句話」？要的話，用哪一句學生真的聽過的？</p>
-      <p class="vote">需要原住民老師、熟悉新住民家庭的老師給意見</p>
+      <div class="no">方向 A〈稿紙在抖〉</div>
+      <div class="theme">直接演出一句「隨口的話」</div>
+      <p class="story">朗讀比賽選代表，怕被點名的同學脫口一句帶刻板印象的「稱讚」，全班笑了。輝仔還在笑，耳朵卻紅了。大頭停了三秒，沒有開罵，選擇站起來回應那句話——全班冷場，有人覺得他掃興。阿蓮第一次說：<span class="y">「我也不舒服。」</span></p>
+      <p class="story">輝仔：「我是在這裡長大的，國語課跟你們同一本。」</p>
+      <p class="vote">那一句話要用哪一句，請熟悉新住民家庭的老師確認</p>
     </article>
+    <article class="ep flag">
+      <div class="no">方向 B〈四點五十分〉</div>
+      <div class="theme">不碰族群，從「每個家不一樣」切入</div>
+      <p class="story">同學阿凱每天四點五十一到就快步離開，全班拿他當笑話。大頭把班級合照約在夕陽最美的時候，阿凱沒說話。隔天大頭張嘴要跟著笑，停住了，走過去問。</p>
+      <p class="story">原來阿凱家規定五點前要到家。大頭把合照提早，<span class="y">放棄了大家都想要的夕陽光。</span></p>
+      <p class="vote">輝仔：「我家也有規矩。」</p>
+    </article>
+  </div>
+  <p class="q mid"><b class="p">想一想：</b>要不要直接演出微歧視？要的話，用哪一句學生真的聽過的？</p>
+</section>
+
+<!-- 10 第5-6集 -->
+<section class="slide" aria-label="第五到六集">
+  <div class="top"><span class="tag">六集故事　第 5～6 集</span></div>
+  <div class="eps two">
     <article class="ep">
-      <div class="no">第 5 集</div>
+      <div class="no">第 5 集〈頭燈〉</div>
       <div class="theme">跟家人好好說 × 氣候變遷</div>
-      <p class="story">豪雨打壞黑狗家的作物，父子大吵。三人一起去田裡幫忙，黑狗換個口氣跟爸爸說話。</p>
-      <p class="q"><b>想一想：</b>學生家裡最怕哪一種天災？跟爸媽吵架，通常吵什麼？</p>
-      <p class="vote">片尾投票：幫黑狗的貼文下一個標題</p>
+      <p class="story">爸爸每次都說「下午沒空」，不來家長日，大頭氣到翻舊帳，看到桌下沾泥的長靴才停住。天亮前，他看見爸爸戴著頭燈出門——天氣太熱，爸爸只能趁天亮前下田、下午補眠。</p>
+      <p class="story">大頭換一種說法：<span class="y">「我有點失望，但我也怕你太累。」</span>爸爸答應用影片參加家長日。</p>
+      <p class="q"><b>想一想：</b>學生家裡最怕哪一種天氣變化？家裡種什麼？</p>
+      <p class="vote">片尾投票：這學期你最大的改變，用一個詞說？</p>
     </article>
     <article class="ep">
-      <div class="no">第 6 集</div>
+      <div class="no">第 6 集〈老蔡，你嘛變了〉</div>
       <div class="theme">看見自己的成長 × 前五集回顧</div>
-      <p class="story">成果展電腦當機，三人各用自己的本事救場。黑狗對鏡頭說：「我們的背景，就是這裡。」</p>
-      <p class="q"><b>想一想：</b>成果展辦在哪裡，學生最有感？校慶、廟口，還是社區活動？</p>
-      <p class="vote">劇終活動：全校角色梗圖創作比賽</p>
+      <p class="story">大頭邊走邊滑手機，撞落老蔡的隨身小音響。他手在抖，喊出「免驚啦，我會賠」，又自己停住。三人決定錄一段「我哪裡變了」送給老蔡，最後反問老師：</p>
+      <p class="story"><span class="y">「老師，那你這一年哪裡變了？」</span>一直問問題的老蔡，第一次答不出來。</p>
+      <p class="q"><b>想一想：</b>最後一集的活動，在班上做還是全校一起？</p>
+      <p class="vote">片尾活動：找一位同學，面對面說一句「你這學期變＿＿了」</p>
     </article>
   </div>
 </section>
 
-<!-- 9 地雷清單 -->
+<!-- 11 六集怎麼串起來 -->
+<section class="slide" aria-label="角色成長線">
+  <div class="top"><span class="tag">六集怎麼串起來　每個角色一集走一小步</span></div>
+  <table class="grow">
+    <thead><tr><th></th><th>第 1 集</th><th>第 2 集</th><th>第 3 集</th><th>第 4 集</th><th>第 5 集</th><th>第 6 集</th></tr></thead>
+    <tbody>
+      <tr><th>大頭<small>先衝 → 先停</small></th><td>說出「丟臉」</td><td class="hl">第一次自己停下</td><td>先面對自己</td><td class="hl">停下來後站出來</td><td>跟爸爸換個說法</td><td>先承認，不再藏</td></tr>
+      <tr><th>阿蓮<small>默默做 → 說出來</small></th><td>拒絕被性別定義</td><td>陪著默數</td><td>跟著誠實</td><td class="hl">第一次說「不舒服」</td><td>—</td><td>主動提議</td></tr>
+      <tr><th>輝仔<small>等別人 → 先開口</small></th><td>點出關鍵</td><td>冷笑話</td><td class="hl">第一次先開口</td><td>不卑不亢回應</td><td>一句提醒</td><td>第一個說出口</td></tr>
+      <tr><th>老蔡</th><td>只問不答</td><td>只問一句</td><td>在旁邊</td><td>只問一句</td><td>—</td><td class="hl">被學生問倒</td></tr>
+    </tbody>
+  </table>
+  <p class="mid">每集片尾投票的詞，都會放進下一集：例如第 4 集投「最想跟家人說的話」，第 5 集就變成大頭寫給爸爸的便條。</p>
+</section>
+
+<!-- 12 地雷清單 -->
 <section class="slide" aria-label="地雷檢查清單">
   <div class="top"><span class="tag">地雷檢查清單　點一下切換：空白 → ✓ 沒問題 → ✕ 要改</span></div>
   <h2 style="font-size:3cqw">這些地方，會不會讓學生或家長不舒服？</h2>
   <div class="mines" id="mines">
-    <button class="mine" type="button" id="m1" data-s=""><i class="box"></i><div><b>原住民</b><span>不用唱歌跳舞、運動好、喝酒、加分當笑點；族名、服飾要有根據</span></div></button>
+    <button class="mine" type="button" id="m1" data-s=""><i class="box"></i><div><b>族群題材</b><span>本劇不碰原住民題材；任何角色的族群背景都不當笑點</span></div></button>
     <button class="mine" type="button" id="m2" data-s=""><i class="box"></i><div><b>新住民</b><span>不模仿口音、不用「外配」這類稱呼、不只用食物代表一個文化</span></div></button>
     <button class="mine" type="button" id="m3" data-s=""><i class="box"></i><div><b>家庭與經濟</b><span>不拿家裡做什麼工作、有沒有錢開玩笑</span></div></button>
     <button class="mine" type="button" id="m4" data-s=""><i class="box"></i><div><b>動手與受傷</b><span>打頭、威脅、受傷住院，都不當笑點</span></div></button>
@@ -323,7 +386,7 @@ li{margin:.3em 0}
   </div>
 </section>
 
-<!-- 10 待決與下一步 -->
+<!-- 13 待決與下一步 -->
 <section class="slide" aria-label="待決與下一步">
   <div class="top"><span class="tag">還沒決定的事　＋　下一步</span></div>
   <div class="two">
@@ -332,13 +395,15 @@ li{margin:.3em 0}
       <ul class="mid">
         <li>一個月播一集、共六個月，<span class="y">從哪個月開播？</span>會不會遇到寒假？</li>
         <li>學生的投票結果<span class="y">由誰整理</span>？</li>
+        <li>第 1 集用<span class="y">版本甲還是版本乙</span>？</li>
+        <li>第 4 集走<span class="y">方向 A 還是方向 B</span>？</li>
         <li>第一集要不要先請<span class="y">幾位學生試看</span>？</li>
       </ul>
     </div>
     <div style="display:flex;flex-direction:column;gap:1.6cqw">
       <h2 class="y">下一步</h2>
       <ol class="steps">
-        <li><span class="d">1</span><span>會後一週內，把想到的學生真實例子傳給秘書</span></li>
+        <li><span class="d">1</span><span>會後把想到的學生真實例子傳給秘書</span></li>
         <li><span class="d">2</span><span>依今天的意見，修改角色與六集故事</span></li>
         <li><span class="d">3</span><span>先做出第一集，給大家看過再往下做</span></li>
       </ol>
@@ -352,7 +417,7 @@ li{margin:.3em 0}
 <nav class="bar" aria-label="翻頁">
   <button type="button" id="prev">← 上一頁</button>
   <div class="dots" id="dots"></div>
-  <span id="count" style="font-variant-numeric:tabular-nums">1 / 10</span>
+  <span id="count" style="font-variant-numeric:tabular-nums">1 / 13</span>
   <button type="button" id="full">全螢幕</button>
   <button type="button" id="next">下一頁 →</button>
 </nav>
