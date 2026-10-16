@@ -38,7 +38,8 @@
 | 離線安裝包（隨身碟） | — | 腳本已寫，待實測 |
 | 第 1 集雙軌語音生成（家裡 RTX 3050，BreezyVoice） | — | 老蔡試配音質不滿意，待處理參考音 |
 | LIB-office 影像底層環境＋模型下載（不需顯卡） | 2026-10-16 | ✅ 完成（H3 venv、ComfyUI 0.37.0、133.7GB 模型、DMAD 轉檔；`C:\AI` junction 到 D 槽） |
-| LIB-office 裝 RTX 5060 Ti → torch 驗證＋隨身碟打包 | — | 等顯卡 |
+| LIB-office 加裝語音全套（為分派 VR-1 做準備） | 2026-10-16 | ✅ 完成（Voice／BreezeTTS／BreezyVoice 三環境＋BreezyVoice、Breeze TTS 2、VoxCPM2、whisper large-v3） |
+| LIB-office 裝 RTX 5060 Ti → 四環境 torch 驗證＋smoke_test＋隨身碟打包 | — | 等顯卡 |
 | 第 1 集雙軌生成影片（需顯卡）→ Opus 盲評成片 | — | 等顯卡 |
 
 無外部期限。

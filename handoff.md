@@ -1,7 +1,7 @@
 # 交接檔：影音生成（SEL 影集《高中生搞大事！》＋三師爸地端 AI 短片）
 
-**最後更新**：2026-10-16 00:35 ｜ LIB-PC-004011（LIB-office；家裡 23:36 的語音進度已保留在下方）
-**分工（2026-10-15 使用者決定）**：LIB-office（LIB-PC-004011）只做**影像**；家裡 FrentexHome（RTX 3050 8GB）只做**語音**。
+**最後更新**：2026-10-16 10:10 ｜ LIB-PC-004011（LIB-office；家裡 23:36 的語音進度已保留在下方）
+**分工（2026-10-16 更新）**：LIB-office（LIB-PC-004011，5060 Ti 16GB 待裝＋32GB）裝**影像＋語音全套**，以便未來分派工作給 VR-1；家裡 FrentexHome（RTX 3050 8GB）做**語音**，老蔡參考音與試配都在那邊進行中。
 
 ---
 
@@ -21,7 +21,21 @@
 2. 老蔡定案後跑黃線：複製 `<repo>\pipeline\template_local\make_film.py` 到 `製作\EP1_v3_黃線\`，`py -3.12 make_film.py voices`（會用 edge-tts 送台詞文字做答案卷，使用者已同意）。**建議**：黃線 Breeze 設計出的 `ref_gou／lian／hui／gua.wav` 複製到三師爸軌，兩軌共用同一組聲音（公平比較；使用者尚未表態）。
 3. 兩軌都通後：插隨身碟打包 `離線安裝包\pack.ps1 -Dest <碟>:\AI離線包 -Part voice -Test`（腳本尚未實測）。
 
-## 🏫 LIB-office（影像）— 進度（LIB-PC-004011 2026-10-16 00:35）
+## 🏫 LIB-office — 進度（LIB-PC-004011 2026-10-16 10:10）
+
+> **分工已變更（使用者 2026-10-16 決定）**：這台不再只做影像，**影像＋語音全套都裝**，因為未來可能把部分工作分派給 VR-1，要能用 `離線安裝包\pack.ps1` 打包整套帶走。
+> 家裡 FrentexHome 的語音進度仍有效（老蔡參考音、試配、film.json 都在那邊做的），不受影響。
+
+### 語音部分（2026-10-16 上午完成，與家裡版本一致）
+- ✅ `C:\AI\Voice`（Python 3.12.13，torch cu130）：確認指令回 `ok`（voxcpm、faster_whisper、audio_separator、stable_whisper、edge_tts）。
+- ✅ `C:\AI\BreezeTTS`（breeze-tts commit `6eba901`）：`2.9.1+cu128`。
+- ✅ `C:\AI\BreezyVoice`（code commit `d592c9d`、Python 3.10.20）：`2.7.1+cu128`；`winstub` 已複製。
+- ✅ 語音模型全部 `failed 0`：BreezyVoice 153 檔、Breeze TTS 2 16 檔、VoxCPM2 主權重 2 檔；另抓 VoxCPM2 小檔（21 檔 4.62GB）與 faster-whisper large-v3（16 檔 2.88GB）。
+- ⚠️ 三個環境的 `torch.cuda.is_available()` 目前都是 **False**（沒顯卡），裝卡後要重跑三個確認指令。
+- ⚠️ **`py -3.12` 在這台不存在**（3.12 是 uv 裝的，不在 py launcher）→ 建 venv 一律用 `uv venv --python 3.12`，不要照手冊的 `py -3.12 -m venv`。
+- 未裝：AI Toolkit（`C:\AI\lora\ai-toolkit`，選用，角色 LoRA 訓練才要）。
+
+### 影像部分
 - **顯卡還沒裝**（只有 Intel UHD 630）；先以 RTX 5060 Ti 16GB 為基準裝底層、下載模型。**不需顯卡的部分全部做完了。**
 - **C 槽只剩 27GB → `mklink /J C:\AI D:\AI`**，實體在 D 槽（repo 有 51 個檔寫死 `C:\AI`，所以用 junction 不改路徑）。重灌或搬機要重建這條 junction；隨身碟打包時來源實際在 D 槽。
 - ✅ 環境：git 2.52.0、uv 0.11.19、ffmpeg 9.0.1、Python 3.12.13（`uv python install`）。本機 `python` 是市集空殼（exit 49），一律用 `py -3.14`。
@@ -34,10 +48,18 @@
 
 ### LIB-office 裝上 5060 Ti 後要做（只剩這些）
 1. `nvidia-smi`：CUDA Version ≥ 13.0（不夠請使用者更新 NVIDIA 驅動）。
-2. 重跑這行，確認從 `False` 變 `True`：
-   `C:\AI\H3\venv\Scripts\python.exe -c "import torch;print(torch.__version__, torch.cuda.is_available())"` → 應為 `2.14.0+cu130 True`。
-3. 打包：`離線安裝包\pack.ps1 -Dest <碟>:\AI離線包 -Part video -Test`（隨身碟 exFAT／NTFS；要看到「✅ 離線測試通過」）。腳本尚未實測。
-4. 不要跑 `smoke_test.py`（會連語音一起測，這台沒裝語音）。
+2. 四個環境各重跑確認指令，應全部從 `False` 變 `True`：
+   - H3：`C:\AI\H3\venv\Scripts\python.exe -c "import torch;print(torch.__version__, torch.cuda.is_available())"` → `2.14.0+cu130 True`
+   - BreezeTTS → `2.9.1+cu128 True`；BreezyVoice → `2.7.1+cu128 True`；Voice 環境同樣查一次
+3. **這台現在可以跑 `smoke_test.py`**（影像＋語音都裝了）；它會順便觸發 BS-RoFormer 自動下載到 `C:\AI\Voice\models\separator`。
+4. 打包：`pack.ps1` 的 `-Part` 只接受 `voice` 或 `video`（`ValidateSet`，**沒有 `all`**）。這台兩套都有，所以**同一個 `-Dest` 跑兩次**：
+   ```
+   powershell -ExecutionPolicy Bypass -File 離線安裝包\pack.ps1 -Dest <碟>:\AI離線包 -Part video -Test
+   powershell -ExecutionPolicy Bypass -File 離線安裝包\pack.ps1 -Dest <碟>:\AI離線包 -Part voice -Test
+   ```
+   兩次的 uv-cache 與打包紀錄分別存成 `uv-cache-video`／`uv-cache-voice`、`打包紀錄-video.txt`／`打包紀錄-voice.txt`，不會互相覆蓋；`tools` 兩次都複製（覆蓋，無害）。`-Part voice` 才會額外帶 Python 3.10 與 bert-base-chinese 快取。
+   隨身碟要 exFAT／NTFS，要看到「✅ 離線測試通過」。⚠️ 腳本尚未實測。
+   **容量注意**：影像 133.7GB＋語音約 21GB＋環境，256GB 隨身碟會很緊，打包前先確認剩餘空間。
 
 ---
 
@@ -58,6 +80,7 @@
 - 新檔案尚未推 GitHub；騰訊 `tx/deepseek/deepseek-flash` 額度用完。
 
 ## 變更紀錄
+- 2026-10-16 上午 LIB-PC-004011：使用者改變分工——這台改裝**影像＋語音全套**（為了未來分派工作給 VR-1）。三個語音環境裝完並通過確認指令（版本與家裡一致）；語音模型全數下載（BreezyVoice、Breeze TTS 2、VoxCPM2、whisper large-v3）。查定 `pack.ps1 -Part` 只有 voice／video，要跑兩次。
 - 2026-10-16 00:35 LIB-PC-004011：H3 venv 套件裝完（torch 2.14.0+cu130）；七份影像模型全數下載完成（20 檔、133.7GB、failed 0）；DMAD 轉檔完成。不需顯卡的影像前置工作全部結束，餘下等 5060 Ti 到位做驗證與隨身碟打包。
 - 2026-10-15 23:36 FrentexHome：語音環境 2b～2e 與三個語音模型全部裝好驗證；老蔡逐字稿寫入兩份 film.json、參考音就位、`.gitignore` 補 `製作/**/out/`；試配老蔡（3050 實測快、顯存 2GB），使用者對音質不滿意待處理；寫離線安裝包方案。
 - 2026-10-15 夜 LIB-PC-004011：顯卡未裝，先以 5060 Ti 為基準裝底層；`mklink /J C:\AI D:\AI`；ComfyUI v0.37.0＋自訂節點、tools、Python 3.12.13；uv 套件與 128.4GB 影像模型下載中。
