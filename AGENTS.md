@@ -63,6 +63,7 @@
 - 原始 repo 需 Windows 11＋NVIDIA（CUDA 13）＋ComfyUI 0.37＋Python 3.12＋uv＋ffmpeg，模型約 150GB。
 - 本機（FrentexHome）顯卡為 RTX 3050 8GB／RAM 32GB，**不適合跑影像**；語音可以（BreezyVoice 實測顯存峰值 2GB、每候選 6～9 秒）。影像用 LIB-office（5060 Ti 16GB＋32GB）或 ppsh-VR-1。
 - **LIB-office 的 `C:\AI` 是 junction**（`mklink /J C:\AI D:\AI`，C 槽不夠）；repo 寫死 `C:\AI`，重灌或搬機要重建。
+- **LIB-office 的 uv 套件快取也在 D 槽**：使用者環境變數 `UV_CACHE_DIR=D:\uv-cache`（原本在 C 槽佔 18.91GB）。`pack.ps1` 用 `uv cache dir` 動態查詢，所以離線打包不受影響；重灌後要重設這個變數。
 - 三師爸 `download.py` 只用標準庫，任何 Python 都能跑（不必等 H3 venv）。
 
 ## 對照表

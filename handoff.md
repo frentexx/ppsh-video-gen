@@ -1,6 +1,6 @@
 # 交接檔：影音生成（SEL 影集《高中生搞大事！》＋三師爸地端 AI 短片）
 
-**最後更新**：2026-10-16 10:10 ｜ LIB-PC-004011（LIB-office；家裡 23:36 的語音進度已保留在下方）
+**最後更新**：2026-10-16 13:15 ｜ LIB-PC-004011（LIB-office；家裡 23:36 的語音進度已保留在下方）
 **分工（2026-10-16 更新）**：LIB-office（LIB-PC-004011，5060 Ti 16GB 待裝＋32GB）裝**影像＋語音全套**，以便未來分派工作給 VR-1；家裡 FrentexHome（RTX 3050 8GB）做**語音**，老蔡參考音與試配都在那邊進行中。
 
 ---
@@ -38,6 +38,11 @@
 ### 影像部分
 - **顯卡還沒裝**（只有 Intel UHD 630）；先以 RTX 5060 Ti 16GB 為基準裝底層、下載模型。**不需顯卡的部分全部做完了。**
 - **C 槽只剩 27GB → `mklink /J C:\AI D:\AI`**，實體在 D 槽（repo 有 51 個檔寫死 `C:\AI`，所以用 junction 不改路徑）。重灌或搬機要重建這條 junction；隨身碟打包時來源實際在 D 槽。
+- **uv 套件快取也移到 D 槽**（2026-10-16，✅ 已完成並驗證）：裝完四個環境後快取在 C 槽長到 18.91GB／113741 個檔，C 槽只剩 10.4GB。已設使用者環境變數 **`UV_CACHE_DIR=D:\uv-cache`**，用 `robocopy /MOVE` 搬移（113741 檔全成功、0 失敗 0 跳過、耗時 20 分）。
+  - 驗證：`uv cache dir` 回報 `D:\uv-cache`、舊位置 `%LOCALAPPDATA%\uv\cache` 已不存在、**C 槽從 10.4GB 回到 29.5GB**。
+  - `pack.ps1` 第 39 行是 `(& uv cache dir).Trim()`，**動態查詢**不是寫死，所以離線打包照樣抓得到。
+  - 重灌或換機要重設這個環境變數，否則 uv 又會把快取寫回 C 槽。
+  - 這兩件事（junction＋UV_CACHE_DIR）是這台的**環境前提**，任何在這台跑 uv／repo 腳本的人都要知道。
 - ✅ 環境：git 2.52.0、uv 0.11.19、ffmpeg 9.0.1、Python 3.12.13（`uv python install`）。本機 `python` 是市集空殼（exit 49），一律用 `py -3.14`。
 - ✅ ComfyUI clone＋checkout `v0.37.0`；三個自訂節點（`892515e`、`4820b3f`、`d116451`）；`extra_model_paths.yaml` 已複製。
 - ✅ `C:\AI\tools`（25 檔）。
@@ -80,6 +85,7 @@
 - 新檔案尚未推 GitHub；騰訊 `tx/deepseek/deepseek-flash` 額度用完。
 
 ## 變更紀錄
+- 2026-10-16 下午 LIB-PC-004011：uv 套件快取搬到 D 槽（`UV_CACHE_DIR=D:\uv-cache`，robocopy /MOVE 113741 檔全成功），C 槽 10.4GB → 29.5GB。
 - 2026-10-16 上午 LIB-PC-004011：使用者改變分工——這台改裝**影像＋語音全套**（為了未來分派工作給 VR-1）。三個語音環境裝完並通過確認指令（版本與家裡一致）；語音模型全數下載（BreezyVoice、Breeze TTS 2、VoxCPM2、whisper large-v3）。查定 `pack.ps1 -Part` 只有 voice／video，要跑兩次。
 - 2026-10-16 00:35 LIB-PC-004011：H3 venv 套件裝完（torch 2.14.0+cu130）；七份影像模型全數下載完成（20 檔、133.7GB、failed 0）；DMAD 轉檔完成。不需顯卡的影像前置工作全部結束，餘下等 5060 Ti 到位做驗證與隨身碟打包。
 - 2026-10-15 23:36 FrentexHome：語音環境 2b～2e 與三個語音模型全部裝好驗證；老蔡逐字稿寫入兩份 film.json、參考音就位、`.gitignore` 補 `製作/**/out/`；試配老蔡（3050 實測快、顯存 2GB），使用者對音質不滿意待處理；寫離線安裝包方案。
